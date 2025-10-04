@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Big Image Gallery & Past Projects</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      
+    }
+
+    .container {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #bc9667;
+    }
+
+    .img-container {
+      gap: 25px;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .img-container img {
+      width: 750px;
+      height: auto;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 25px;
+      background-color: #fcf3cf;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-left: 15px;
+    }
+
+    .img-container img:hover {
+      background-color: #322719;
+      transform: scale(1.02);
+    }
+
+    p {
+      text-align: center;
+      margin: 10px 4px;
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      color: #f0f0f0;
+      font-size: x-large;
+    }
+
+    .para {
+      display: flex;
+      align-items: center;
+    }
+
+    .para p {
+      margin-left: 100px;
+    }
+
+    .intro-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .intro-wrap img {
+      width: 45%;
+      border: 1px solid black;
+      border-radius: 50%;
+      background-color: #fcf3cf;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 5px;
+      
+    }
+
+    .intro-text {
+      width: 50%;
+    }
+
+    .intro-text p {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #f0f0f0;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: large;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .project-section {
+      background: #f8f8f8;
+      padding: 40px 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .project-detail {
+      margin: 5px 0;
+    }
+
+    .show-more {
+      color: #007bff;
+      cursor: pointer;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .extra-info {
+      display: none;
+    }
+    .gg{
+      display: flex;
+      align-items: center;
+      
+    }
+    .project-section{
+      margin-left: 100px;
+      border-radius: 10px;
+      background-color: antiquewhite;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <p>
+            Welcome to our Early Projects page, where you can explore the transformation of spaces through our home design expertise. 
+            Here, we showcase before-and-after photos from the same locations, highlighting the impact of thoughtful design, creative solutions, 
+            and quality craftsmanship. These early projects represent the foundation of our journey—where vision met possibility and turned ideas 
+            into inviting, functional living spaces. Take a closer look and see how each home evolved into something truly special.
+          </p>
+    <div class="img-container">
+      <p>1. KITCHEN REPAIR</p>
+        <div class="gg">
+        <img src="A.jpg" alt="Image A" style="margin-left: 165px;">
+        
+  <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+  
+  
+       </div>
+     
+       <div class="img-container">
+      <p>2. DINING ROOM</p>
+      <div class="gg">
+      <img src="C.jpg" alt="Image C" style="margin-left: 142px;">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+       <div class="img-container">
+      <p>3. BARTHROOM</p>
+      <div class="gg">
+      <img src="wha3.jpg" alt="Image wha3" style="margin-left: 120px;">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+       <div class="img-container">
+      <p>4. OUTDOOR BASEMENT </p>
+      <div class="gg">
+      <img src="G.jpg" alt="Image G" style="margin-left: 93px;">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+       <div class="img-container">
+      <p>5. BEDROOM </p>
+      <div class="gg">
+      <img src="J.jpg" alt="Image J"style= margin-left:68px;>
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+       <div class="img-container">
+      <p>6. LIVING ROOM </p>
+      <div class="gg">
+      <img src="M.jpg" alt="Image M" style="margin-left: 45px;">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+       <div class="img-container">
+      <p>7. KITCHEN & LIVING ROOM </p>
+      <div class="gg">
+      <img src="N.jpg" alt="Image N">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <p>8. FULL COMPLETE HOUSE</p>
+      <div class="gg">
+      <img src="B.jpg" alt="Image B">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <p>9. OUTDOOR BASEMENT & GARDEN</p>
+      <div class="gg">
+      <img src="D.jpg" alt="Image D">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <p>10. POOL & GARDEN</p>
+      <div class="gg">
+      <img src="H.jpg" alt="Image H">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+
+      <p>11. OUTDOOR LIVING ROOM & GARDEN</p>
+      <div class="gg">
+      <img src="I.jpg" alt="Image I">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+
+      <p>12. FULL COMPLETE DINING ROOM</p>
+      <div class="gg">
+      <img src="L.jpg" alt="Image L">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <p>13. FULL COMPLETE HOUSE</p>
+      <div class="gg">
+      <img src="E.jpg" alt="Image E">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <p>14. FULL COMPLETE MINI HOUSE</p>
+      <div class="gg">
+      <img src="K.jpg" alt="Image K">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <p>15. OUTDOOR LIVING ROOM</p>
+      <div class="gg">
+      <img src="O.jpg" alt="Image O">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+       <p>16. BATHROOM</p>
+      <div class="gg">
+      <img src="wha.jpg" alt="Image wha">
+      <div class="project-section">
+    <div class="project-card">
+      <div class="project-title">1. Modern Villa in California</div>
+      <div class="project-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="project-detail"><strong>Team:</strong> 5 Employees</div>
+      <div class="project-detail"><strong>Time to Complete:</strong> 4 Months</div>
+      <div class="show-more" onclick="toggleDetails(this)">Show more</div>
+      <div class="extra-info">
+        <div class="project-detail"><strong>Client Payment:</strong> $120,000</div>
+        <div class="project-detail"><strong>Materials Used:</strong> Wood, Stone, Glass</div>
+        <div class="project-detail"><strong>Special Features:</strong> Rooftop garden, smart lighting</div>
+      </div>
+    </div>
+  </div>
+      </div>
+
+
+      
+      
+
+      
+
+
+
+
+
+
+      
+
+
+      
+      
+
+     
+
+      
+      
+
+     
+
+     
+
+      
+
+      
+     
+     
+      
+
+      
+
+     
+  </div>
+
+  <!-- Project Cards Section -->
+  
+
+  <script>
+    function toggleDetails(element) {
+      const extra = element.nextElementSibling;
+      if (extra.style.display === 'block') {
+        extra.style.display = 'none';
+        element.innerText = 'Show more';
+      } else {
+        extra.style.display = 'block';
+        element.innerText = 'Show less';
+      }
+    }
+  </script>
+
+</body>
+</html>

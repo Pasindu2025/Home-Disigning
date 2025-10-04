@@ -1,0 +1,173 @@
+*{
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    
+  }
+  .banner{
+    
+    width:100%;
+    height:100vh;
+  }
+  .navbar{
+  
+    background-color: black;
+    width:100%;
+    margin:auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo{
+    width:120px;
+    border-radius: 50%;
+    position: relative;
+    left: 100px;
+    cursor: pointer;
+  }
+  .navbar ul li{
+    display: inline-block;
+    list-style: none ;
+    margin: 0 20px;
+    position: relative;
+    
+  }
+  .navbar ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    text-transform: uppercase;
+
+  }
+  .navbar ul li::after{
+    content: '';
+    width:0;
+    height:3px;
+    background: blue;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  .navbar ul li:hover::after{
+    width: 100%;
+  }
+  .container{
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+  }
+  .img-container{
+    width:100%;
+    display: flex;
+    animation: slids 12s infinite alternate ;
+   
+  }
+  .img-container img{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+  .content h1{
+    font-size: 70px;
+    margin-top: 80px;
+  }
+  .content h2{
+    margin-left: 400px;
+    font-size: 70px;
+  }
+  .content p{
+    text-align: center;
+    margin: 0 30px;
+  }
+  .content{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: aliceblue;
+
+  }
+  button{
+    width:200px;
+    padding: 15px 0;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    text-align: center;
+    color: aliceblue;
+    cursor: pointer;
+    position: relative;
+  }
+  span{
+    background: #009688;
+    height: 100%;
+    width:0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 25px;
+    z-index: -1;
+   }
+  button:hover span{
+    transition: 0.5s;
+    width: 100%;
+  }
+  @keyframes logorotation{
+    0%{
+      transform: rotate(0deg);
+    }
+    50%{
+      transform:rotate(360deg);
+    }
+    
+  }
+  .navbar img{
+    animation: logorotation 4s infinite  alternate-reverse;
+  }
+  @keyframes slids{
+    0%{
+      transform: translateX(0);
+    }
+    25%{
+      transform: translateX(-25%);
+    }
+    50%{
+      transform: translateX(-50%);
+    }
+    75%{
+      transform: translateX(-75%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+  }
+  body{
+    background-image: url("8.webp");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    
+    }
+    .form-box{
+      transition: 2s;
+      width: 20%;
+      animation: formrotation 2s 2;
+      
+    }
+    @keyframes formrotation{
+      0%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+    .content button a{
+      color: aliceblue;
+    }

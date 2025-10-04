@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedrooms - MAINE MADE & Furniture</title>
+    <style>
+        /* --- General Styles --- */
+        *{
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-padding-top: 4rem;
+            scroll-behavior: smooth;
+            list-style: none;
+            text-decoration: none;
+            /* REMOVED: background-size: cover; from global selector */
+        }
+        body{
+            overflow-x: hidden;
+            background-image: url("back.jpg"); /* Ensure this path is correct */
+            background-size: cover; /* Applied to body */
+            background-attachment: fixed; /* Keeps background fixed on scroll */
+            background-position: center; /* Centers the background image */
+        }
+        h1 {
+            font-size: 70px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #1b1b1b; /* Ensure text is visible on background */
+            margin-bottom: 20px; /* Added some space */
+        }
+        h2{
+            color: #1b1b1b; /* Ensure text is visible on background */
+        }
+        p{
+            text-align: center;
+            font-size: large;
+            color: #1b1b1b; /* Ensure text is visible on background */
+        }
+
+        /* --- Content Introduction Section --- */
+        .contnt{
+            text-align: center;
+            padding: 80px 350px;
+            /* If you want a softer rectangle, consider a smaller value like 20px instead of 50% */
+            border-radius: 50%; /* Adjust if it's not the desired shape */
+            background-color: rgba(250, 235, 215, 0.9); /* Added rgba for slight transparency */
+            margin-bottom: 3rem; /* Space below introduction */
+        }
+
+        /* --- Bedroom Rooms Grid --- */
+        .BD-rooms{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 0 20px;
+            margin-bottom: 2rem; /* Space above the 'MORE' link */
+        }
+        .BD-rooms .box{
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 14px rgba(14, 55, 54, 0.15); /* Using rgba for shadow */
+            background-color: #ffffff; /* Explicitly set box background to white */
+            overflow: hidden; /* Ensures image corners are rounded correctly */
+            cursor: pointer; /* Indicates images are clickable */
+        }
+        .BD-rooms img{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+            padding: 20px;
+            background-color: #f9f3f3;
+            border-radius: 10px; /* Consolidated duplicated border-radius */
+            transition: transform 0.3s ease-in-out; /* Smooth scale on hover */
+        }
+        .BD-rooms img:hover {
+            transform: scale(1.05); /* Slightly zoom image on hover */
+        }
+        .BD-rooms .box h3{
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 8px;
+            text-align: center;
+            color: #333; /* Darker text for readability */
+        }
+        .BD-rooms .box .content{
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 10px;
+            align-items: center; /* Vertically center items */
+        }
+        .BD-rooms .box .content span{
+            padding: 5px 1rem; /* Adjusted padding */
+            color: #f9f3f3;
+            background-color: #6c8304; /* Darker green */
+            border-radius: 7px;
+            font-weight: 550;
+            font-size: 0.95rem; /* Slightly smaller font */
+        }
+        .BD-rooms .box .content a{
+            padding: 5px 1rem; /* Adjusted padding */
+            color: #1b1b1b;
+            border: 1px solid #3b2102; /* Darker brown border */
+            border-radius: 7px;
+            text-transform: uppercase;
+            font-size: 0.95rem; /* Slightly smaller font */
+        }
+        .BD-rooms .box .content a:hover{
+            background-color: #bc9667; /* Lighter hover color, previously #f3c77b */
+            color: #1b1b1b; /* Changed text color to darker on hover for contrast */
+            transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out; /* Smooth transition */
+        }
+
+        /* --- "MORE" Link --- */
+        .tt{
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 40px; /* Added space below */
+        }
+        .tt a {
+            color: #3b2102; /* Link color */
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #3b2102;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .tt a:hover {
+            background-color: #3b2102;
+            color: #f9f3f3;
+        }
+
+        /* --- Modal Styles (for image zoom) --- */
+        .modal {
+            display: none; /* HIDDEN BY DEFAULT. JavaScript will change this to 'flex'. */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            /* These are needed for centering, but the display property itself
+               is controlled by JS (set to 'flex' when visible). */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px; /* Optional: match box border-radius */
+        }
+
+        /* The Close Button */
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .next a{
+            font-size: 20px;
+            margin-left: 1325px;
+            border: 3px solid black;
+            border-radius: 8px;
+            padding: 5px 10px;
+            color: #1b1b1b;
+        }
+        .next a:hover{
+             background-color: #3b2102;
+            color: #f9f3f3;
+        }
+        .back a{
+            font-size: 20px;
+            margin-left: 30px;
+            border: 3px solid black;
+            border-radius: 8px;
+            padding: 5px 10px;
+            color: #1b1b1b;
+        }
+        .back a:hover{
+             background-color: #3b2102;
+            color: #f9f3f3;
+        }
+        .line{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bedrooms</h1>
+    <div class="line">
+    <div class="back">
+         <a href="index.php">back</a>
+
+    </div>
+    <div class="next">
+        <a href="kitchen.html">next</a>
+    </div>
+    </div>
+    <div class="contnt">
+        <h2>Discover Our Bedroom Collections</h2>
+        <p>Designing a cohesive and beautiful bedroom can feel overwhelming, but it doesn't have to be. At **MAINE MADE & furniture**, we've taken the guesswork out of interior design with our thoughtfully assembled **bedroom packages**. Each package brings together complementary furniture pieces, soft furnishings, and decor, ensuring a harmonious and stylish look. Whether you're seeking modern minimalism, classic comfort, or something in between, our collections offer a seamless path to a perfectly designed bedroom.</p>
+    </div>
+    <div class="BD-rooms">
+        <div class="box">
+            <img src="BR1.jpg" alt="Modern Bedroom Package 1">
+            <h3>Bedroom Package 1</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR2.jpg" alt="Classic Bedroom Package 2">
+            <h3>Bedroom Package 2</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR3.jpg" alt="Minimalist Bedroom Package 3">
+            <h3>Bedroom Package 3</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR4.webp" alt="Contemporary Bedroom Package 4">
+            <h3>Bedroom Package 4</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR5.jpg" alt="Cozy Bedroom Package 5">
+            <h3>Bedroom Package 5</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR6.jpg" alt="Rustic Bedroom Package 6">
+            <h3>Bedroom Package 6</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR7.jpg" alt="Small Space Bedroom Package 7">
+            <h3>Bedroom Package 7</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR8.jpg" alt="Luxurious Bedroom Package 8">
+            <h3>Bedroom Package 8</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR9.jpg" alt="Scandinavian Bedroom Package 9">
+            <h3>Bedroom Package 9</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR10.jpg" alt="Guest Bedroom Package 10">
+            <h3>Bedroom Package 10</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR12.jpg" alt="Elegant Bedroom Package 11">
+            <h3>Bedroom Package 11</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="BR11.webp" alt="Bohemian Bedroom Package 12">
+            <h3>Bedroom Package 12</h3>
+            <div class="content">
+                <span>Rs.7000/=</span>
+                <a href="#">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <div class="tt">
+        <a href="kitchen.html">MORE</a>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal, the image inside it, and the close button
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("img01");
+        const closeButton = document.querySelector(".close-button");
+
+        // Get all images that are part of the BD-rooms grid
+        const gridImages = document.querySelectorAll(".BD-rooms img");
+
+        // Loop through each image in the grid and add a click listener
+        gridImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "flex"; /* Show the modal using flexbox */
+                modalImg.src = this.src; // Set the modal image source to the clicked image's source
+                // modalImg.alt = this.alt; // Optional: set alt text for modal image too
+            });
+        });
+
+        // When the user clicks on the close button, close the modal
+        closeButton.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // When the user clicks anywhere outside of the image, close the modal
+        modal.addEventListener("click", function(event) {
+            // Check if the click occurred directly on the modal background, not on the image itself
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
